@@ -48,7 +48,9 @@ import {
   MinusCircle,
   Scale,
   FastForward,
-  MessageSquareOff
+  ExternalLink,
+  Github,
+  Rocket
 } from 'lucide-react';
 
 // --- Types ---
@@ -471,6 +473,34 @@ const DocumentationTab = () => (
                  </li>
                ))}
             </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {/* Deployment Guide Section (NEW) */}
+    <div className="bg-slate-900/50 backdrop-blur-xl p-10 rounded-3xl border border-slate-800 relative overflow-hidden group shadow-2xl border-l-4 border-l-amber-500">
+      <div className="relative z-10">
+        <div className="flex items-center gap-3 mb-4">
+          <span className="px-3 py-1 bg-amber-500/20 border border-amber-500/30 rounded-full text-[10px] font-black uppercase tracking-widest text-amber-400">Live Deployment Guide</span>
+        </div>
+        <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-3"><Rocket className="w-6 h-6 text-amber-500" /> How to deploy into a link</h2>
+        
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="p-5 bg-slate-950/50 rounded-2xl border border-slate-800 hover:border-amber-500/30 transition-all">
+            <div className="w-10 h-10 rounded-xl bg-slate-900 flex items-center justify-center mb-4 text-white"><Github className="w-6 h-6" /></div>
+            <p className="text-xs font-bold text-white uppercase mb-2">Step 1: GitHub</p>
+            <p className="text-[11px] text-slate-500">Create a repo and upload <code>index.html</code> and <code>index.tsx</code>.</p>
+          </div>
+          <div className="p-5 bg-slate-950/50 rounded-2xl border border-slate-800 hover:border-amber-500/30 transition-all">
+            <div className="w-10 h-10 rounded-xl bg-slate-900 flex items-center justify-center mb-4 text-amber-500"><ExternalLink className="w-6 h-6" /></div>
+            <p className="text-xs font-bold text-white uppercase mb-2">Step 2: Vercel</p>
+            <p className="text-[11px] text-slate-500">Connect GitHub to Vercel.com. It will automatically build your app.</p>
+          </div>
+          <div className="p-5 bg-slate-950/50 rounded-2xl border border-slate-800 hover:border-amber-500/30 transition-all">
+            <div className="w-10 h-10 rounded-xl bg-slate-900 flex items-center justify-center mb-4 text-emerald-500"><Lock className="w-6 h-6" /></div>
+            <p className="text-xs font-bold text-white uppercase mb-2">Step 3: Environment</p>
+            <p className="text-[11px] text-slate-500">Add <code>API_KEY</code> in Vercel settings so the ML model can work securely.</p>
           </div>
         </div>
       </div>
